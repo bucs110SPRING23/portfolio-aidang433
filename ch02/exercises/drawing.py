@@ -1,12 +1,16 @@
 import turtle 
+
+sides = int(input("How many sides do you want? "))
+length = int(input("How long do you want each side to be? "))
+angle = 360 / sides
+for i in range(sides):
+    turtle.forward(length)
+    turtle.left(angle)
+    turtle.forward(length)
+
 donatello = turtle.Turtle()
 screen = turtle.Screen()
 donatello.color("purple")
-donatello.forward(50)
-donatello.up()
-donatello.forward(50)
-donatello.down()
-donatello.left(90)
 
+turtle.Screen().exitonclick
 
-screen.exitonclick()
