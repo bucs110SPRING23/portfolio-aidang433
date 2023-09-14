@@ -6,11 +6,11 @@ angle = 360 / sides
 for i in range(sides):
     turtle.forward(length)
     turtle.left(angle)
-    turtle.forward(length)
+    
 
 donatello = turtle.Turtle()
 screen = turtle.Screen()
 donatello.color("purple")
-
+turtle.done()
 turtle.Screen().exitonclick
 
