@@ -1,5 +1,7 @@
 
 #Part A
+import pygame
+import math
 import turtle  # 1. import modules
 import random
 m = random.randrange(1,101) #x is or movement variable for the race
@@ -36,26 +38,30 @@ window.exitonclick()
 
 
 #Part B
-import pygame
-import math
+
 
 pygame.init()
-display = pygame.display.set_mode([500,500])
-points =list()
-num_sides = list[3,4,6,20,100,360]
-side_length = 50
-xpos = []
-ypos = []
+while True:
+    for event in pygame.event.get():
+        pass
 
-for i in range(num_sides):
-    angle = 360/num_sides[i]
-    radians = math.radians(angle*i)
-    x = xpos + side_length * math.cos(radians)
-    y = ypos + side_length * math.sin(radians)
-    xpos.append(x)
-    ypos.append(y)
-    pygame.draw.polygon(display,"red",points)
-    pygame.display.flip()
-    pygame.time.wait(2000)
-display.fill("black")
-pygame.display.flip()
+    ## Your code goes below here with no changes other than making sure it is indented one level ##
+    display = pygame.display.set_mode()
+    points = []
+    num_sides = [3,4,6,20,100,360]
+    side_length = 100
+    xpos = 250
+    ypos = 250
+    for x in num_sides:
+        for i in range(x):
+            angle = 360/x
+            radians = math.radians(angle*i)
+            x = xpos + side_length * math.cos(radians)
+            y = ypos + side_length * math.sin(radians)
+            points.append([x,y])
+        display.fill("black")
+        pygame.draw.polygon(display,"red",points)
+        pygame.display.flip()
+        pygame.time.wait(2000)
+        points = []
+    break
